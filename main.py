@@ -1,3 +1,7 @@
+import csv
+import folium
+import io
+import math
 import os
 import pandas as pd
 import requests
@@ -47,7 +51,7 @@ class Window(QWidget):
         self.datesGroupBox = QGroupBox(self.tr("Selections"))
 
         # QUERY
-        self.queryButton = QPushButton("Query Database")
+        self.queryButton = QPushButton("Query Cocorahs Database")
         self.queryButton.clicked.connect(self.query_on_click)
 
         # START DATES
@@ -56,7 +60,7 @@ class Window(QWidget):
         self.currentDateEdit.setDate(self.calendar.selectedDate())
         self.currentDateEdit.setDateRange(self.calendar.minimumDate(),
                 self.calendar.maximumDate())
-        self.currentDateLabel = QLabel("&Start Date:")
+        self.currentDateLabel = QLabel("&Date:")
         self.currentDateLabel.setBuddy(self.currentDateEdit)
 
         # END DATES
@@ -70,25 +74,25 @@ class Window(QWidget):
 
         # LONGITUDE
         self.textboxLong = QLineEdit(self)
-        self.textboxLongLabel = QLabel("Longitude:")
+        self.textboxLongLabel = QLabel("Target Longitude:")
 
         # LATITUDE
         self.textboxLat = QLineEdit(self)
-        self.textboxLatLabel = QLabel("Latitude:")
+        self.textboxLatLabel = QLabel("Target Latitude:")
 
         # STATES
         self.textboxStates = QLineEdit(self)
-        self.textboxStatesLabel = QLabel("States: 'CO,NE,WY'")
+        self.textboxStatesLabel = QLabel("State(s): e.g., 'CO,NE,WY'")
 
         dateBoxLayout = QGridLayout()
         dateBoxLayout.addWidget(self.currentDateLabel, 1, 0)
         dateBoxLayout.addWidget(self.currentDateEdit, 1, 1, 1, 2)
-        dateBoxLayout.addWidget(self.maximumDateLabel, 2, 0)
-        dateBoxLayout.addWidget(self.maximumDateEdit, 2, 1, 1, 2)
-        dateBoxLayout.addWidget(self.textboxLongLabel, 3, 0)
-        dateBoxLayout.addWidget(self.textboxLong, 3, 1, 1, 2)
-        dateBoxLayout.addWidget(self.textboxLatLabel, 4, 0)
-        dateBoxLayout.addWidget(self.textboxLat, 4, 1, 1, 2)
+        # dateBoxLayout.addWidget(self.maximumDateLabel, 2, 0)
+        # dateBoxLayout.addWidget(self.maximumDateEdit, 2, 1, 1, 2)
+        dateBoxLayout.addWidget(self.textboxLatLabel, 3, 0)
+        dateBoxLayout.addWidget(self.textboxLat, 3, 1, 1, 2)
+        dateBoxLayout.addWidget(self.textboxLongLabel, 4, 0)
+        dateBoxLayout.addWidget(self.textboxLong, 4, 1, 1, 2)
         dateBoxLayout.addWidget(self.textboxStatesLabel, 5, 0)
         dateBoxLayout.addWidget(self.textboxStates, 5, 1, 1, 2)
         dateBoxLayout.addWidget(self.queryButton, 6, 0,1,3)
@@ -103,62 +107,96 @@ class Window(QWidget):
         infoPanelBoxLayout.addWidget(self.infoConsole, 0, 0, 1, 1)
         self.infoPanelBox.setLayout(infoPanelBoxLayout)
 
-
-
     def query_on_click(self):
         long = self.textboxLong.text()
         lat = self.textboxLat.text()
         startDate = self.currentDateEdit.date()
         endDate = self.maximumDateEdit.date()
+        states = self.textboxStates.text()
         date_range = list(range(startDate.month(), endDate.month() + 1))
+        dateString = startDate.toString('MM/dd/yyyy')
+        query(long=long, lat=lat, dateString=dateString, states=states)
 
-        options = QFileDialog.Options()
-        options |= QFileDialog.DontUseNativeDialog
-        fileName, _ = QFileDialog.getOpenFileName(self,"Choose a database (.csv) to query", "","All Files (*);;Python Files (*.csv)", options=options)
-        if fileName:
-            df = pd.read_csv(fileName)
-            query(long=long, lat=lat, date_range=date_range, states=states)
+#http://data.cocorahs.org/export/exportreports.aspx?ReportType=hail&Format=csv&State=TX&ReportDateType=reportdate&Date=8/14/2018
+
+def query(long, lat, dateString, states):
+    if long == '' or lat == '':
+        window.infoConsole.append("Empty Target Coordinates")
+        return
+    elif states == '':
+        window.infoConsole.append("Empty State")
+        return
+    else:
+        CSV_URL = 'http://data.cocorahs.org/export/exportreports.aspx'
+
+        payload = {'ReportType': 'hail', 'Format': 'csv', 'State': states, 'ReportDateType': 'reportdate', 'Date': dateString}
+
+        with requests.Session() as s:
+            data = s.get(CSV_URL, params=payload)
 
 
-def query(long, lat, date_range, states):
+    df = pd.read_csv(io.StringIO(data.text), usecols=['StationName', 'Latitude', 'Longitude', 'AverageSize', 'DateTimeStamp'])
+    if df.empty == True:
+        window.infoConsole.append("Cocorahs database has no data for that combination of state(s) and date(s)")
+        return
+    else:
+        df['TargetLatitude'] = lat
+        df['TargetLongitude'] = long
+        df['Distance'] = df[['Latitude', 'Longitude','TargetLatitude','TargetLongitude']].apply(lambda x: distance(*x), axis=1)
+        final = df
 
+        colors = {'A' : 'red', 'B' : 'blue'}
 
-    # if month_range == []:
-    #     window.infoConsole.append("'Start Month' must be before 'End Month'\n")
-    # elif job == '' and emp == '':
-    #     window.infoConsole.append("No Job or Employee chosen\n")
-    # elif job not in listJobs and job != '':
-    #     window.infoConsole.append(f"Job number:{job} not in database\n")
-    # elif emp.upper() not in listEmployees and emp != '':
-    #     window.infoConsole.append(f"Employee '{emp.upper()}' not in database\n")
-    # else:
-    #     if job and emp == '':
-    #         window.infoConsole.append(f"Job '{job}' chosen\n")
-    #         df = db[db['Job'] == job]
-    #     elif job == '' and emp:
-    #         window.infoConsole.append(f"Employee '{emp.upper()}' chosen\n")
-    #         df = db[db['Employee'] == emp.upper()]
-    #     elif job and emp:
-    #         window.infoConsole.append(f"Job '{job}' and Employee '{emp.upper()}' chosen\n")
-    #         df = db[(db['Employee'] == emp.upper()) & (db['Job'] == job)]
-    #
-    #     df.sort_values(['Employee', 'Date'], inplace=True)
-    #     df['Job'] = df['Job'].astype('str')
-    #     df.drop(columns=['Begin','End'], inplace=True)
-    #     final = df.append(df.sum(numeric_only=True), ignore_index=True)
+        map_osm = folium.Map(location=[40.742, -73.956], zoom_start=11)
+
+        df.apply(lambda row:folium.CircleMarker(location=[row["Latitude"], row["Longitude"]],
+                                                      radius=10, fill_color='red')
+                                                     .add_to(map_osm), axis=1)
+
+        map_osm.save('map_osm.html')
 
         # XLWINGS
         wb = xw.Book()  # this will create a new workbook
         sht = wb.sheets['Sheet1']
         sht.range('A1').options(index=False).value = final
         sht.range('A1').options(pd.DataFrame, expand='table').value
-        totals_rangemaker = 'A'+str(final.shape[0]+1)+':'+'R'+str(final.shape[0]+1)
         sht.autofit('c')
         wb.sheets[0].range('A1:R1').api.Font.Bold = True
-        wb.sheets[0].range(totals_rangemaker).api.Font.Bold = True
         return wb
 
 
+
+def distance(stationLatitude, stationLongitude, targetLatitude, targetLongitude):
+    lat1, lon1 = stationLatitude, stationLongitude
+    lat2, lon2 = float(targetLatitude), float(targetLongitude)
+    km_radius = 6371 # km
+    mile_radius = 3959 # radius of the great circle in miles
+
+    dlat = math.radians(lat2-lat1)
+    dlon = math.radians(lon2-lon1)
+    a = math.sin(dlat/2) * math.sin(dlat/2) + math.cos(math.radians(lat1)) \
+        * math.cos(math.radians(lat2)) * math.sin(dlon/2) * math.sin(dlon/2)
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+    d = mile_radius * c
+
+    return d
+
+
+def download_file(url, filename):
+    ''' Downloads file from the url and save it as filename '''
+    # check if file already exists
+    if not os.path.isfile(filename):
+        print('Downloading File')
+        response = requests.get(url)
+        # Check if the response is ok (200)
+        if response.status_code == 200:
+            # Open file and write the content
+            with open(filename, 'wb') as file:
+                # A chunk of 128 bytes
+                for chunk in response:
+                    file.write(chunk)
+    else:
+        print('File exists')
 
 
 if __name__ == '__main__':
