@@ -15,7 +15,7 @@
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     
-    <style>#map_2935d91159184db4b7b295fa16bfee39 {
+    <style>#map_e07596a4356f445f8eb0f8a7aa6c93e2 {
         position: relative;
         width: 100.0%;
         height: 100.0%;
@@ -26,7 +26,7 @@
 </head>
 <body>    
     
-    <div class="folium-map" id="map_2935d91159184db4b7b295fa16bfee39" ></div>
+    <div class="folium-map" id="map_e07596a4356f445f8eb0f8a7aa6c93e2" ></div>
 </body>
 <script>    
     
@@ -34,10 +34,10 @@
         var bounds = null;
     
 
-    var map_2935d91159184db4b7b295fa16bfee39 = L.map(
-        'map_2935d91159184db4b7b295fa16bfee39', {
-        center: [40.742, -73.956],
-        zoom: 11,
+    var map_e07596a4356f445f8eb0f8a7aa6c93e2 = L.map(
+        'map_e07596a4356f445f8eb0f8a7aa6c93e2', {
+        center: [40.0, -105.0],
+        zoom: 8,
         maxBounds: bounds,
         layers: [],
         worldCopyJump: false,
@@ -47,8 +47,8 @@
 
     
     
-    var tile_layer_b75f635e9beb40758a2c17c40a3d27b6 = L.tileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    var tile_layer_cc6fb26605124c5f91b74e3061975206 = L.tileLayer(
+        'https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png',
         {
         "attribution": null,
         "detectRetina": false,
@@ -57,423 +57,594 @@
         "minZoom": 0,
         "noWrap": false,
         "subdomains": "abc"
-}).addTo(map_2935d91159184db4b7b295fa16bfee39);
+}).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
     
-            var circle_marker_a1f9d036547e4b999faabba8b2984bb4 = L.circleMarker(
-                [39.5795, -105.2789],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_aa51ae03ac57402096f7eb0da18f5f36 = L.marker(
+            [39.5795, -105.2789],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_68614c898b28476d8290989fd4d21eeb = L.circleMarker(
-                [40.2001, -105.1087],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_1b41a916fad346baa6b37f819de10835 = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_55552a1716e34825bb67d7dd797694db = $('<div id="html_55552a1716e34825bb67d7dd797694db" style="width: 100.0%; height: 100.0%;"> Evergreen 4.2 SSE</div>')[0];
+                popup_1b41a916fad346baa6b37f819de10835.setContent(html_55552a1716e34825bb67d7dd797694db);
+            
+
+            marker_aa51ae03ac57402096f7eb0da18f5f36.bindPopup(popup_1b41a916fad346baa6b37f819de10835)
+            ;
+
+            
+        
     
-            var circle_marker_ded2e6b3525143048cc2e2e89fa06d9b = L.circleMarker(
-                [40.1945, -105.0905],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_b53893b3f83d4ad7b6fc2a32ae9bde34 = L.marker(
+            [40.2001, -105.1087],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_fd4d58f48e26400597755931d95d3044 = L.circleMarker(
-                [39.4905, -105.5239],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_bade608af21a49199caea311ec9737eb = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_b891bf4744bc457cbb996a526b7c5e40 = $('<div id="html_b891bf4744bc457cbb996a526b7c5e40" style="width: 100.0%; height: 100.0%;"> Longmont 2.1 N</div>')[0];
+                popup_bade608af21a49199caea311ec9737eb.setContent(html_b891bf4744bc457cbb996a526b7c5e40);
+            
+
+            marker_b53893b3f83d4ad7b6fc2a32ae9bde34.bindPopup(popup_bade608af21a49199caea311ec9737eb)
+            ;
+
+            
+        
     
-            var circle_marker_55677743d4c24f73873c3f13a4c4f661 = L.circleMarker(
-                [39.5795, -105.2789],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_94056d914dd748959de27dbad26a907c = L.marker(
+            [40.1945, -105.0905],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_de9cd936ec12459996c1118e11c17644 = L.circleMarker(
-                [40.21242, -105.04257379999999],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_93166b6f93874e628e475d31e7ca4639 = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_52c3949f398940dc92bb47a9e0743522 = $('<div id="html_52c3949f398940dc92bb47a9e0743522" style="width: 100.0%; height: 100.0%;"> Longmont 1.7 NNE</div>')[0];
+                popup_93166b6f93874e628e475d31e7ca4639.setContent(html_52c3949f398940dc92bb47a9e0743522);
+            
+
+            marker_94056d914dd748959de27dbad26a907c.bindPopup(popup_93166b6f93874e628e475d31e7ca4639)
+            ;
+
+            
+        
     
-            var circle_marker_961d48660b6f46c5b9850cbd49bae387 = L.circleMarker(
-                [39.817103, -105.177416],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_9cfb70ff9f394a0fb9de5dee6a7e831c = L.marker(
+            [39.4905, -105.5239],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_105fee4ea63049078ce0f9da9639f4a0 = L.circleMarker(
-                [39.984390000000005, -104.81341],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_c5683d68b41a4e6aa17c0d3f551cf8fb = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_f125595247c046a3ab194e693647d231 = $('<div id="html_f125595247c046a3ab194e693647d231" style="width: 100.0%; height: 100.0%;"> Bailey 6.4 NNW</div>')[0];
+                popup_c5683d68b41a4e6aa17c0d3f551cf8fb.setContent(html_f125595247c046a3ab194e693647d231);
+            
+
+            marker_9cfb70ff9f394a0fb9de5dee6a7e831c.bindPopup(popup_c5683d68b41a4e6aa17c0d3f551cf8fb)
+            ;
+
+            
+        
     
-            var circle_marker_1dbb446150df4789884769ef400c6010 = L.circleMarker(
-                [39.9752, -104.7909],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_b49c625b20ce4cd7be085554253603eb = L.marker(
+            [39.5795, -105.2789],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_48f7eba19c464ae481c6568f1c312535 = L.circleMarker(
-                [39.676156, -105.03612690000001],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_a662892bd81c43ea9cd3b48d7593eb35 = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_0fd467019c2447a3992c24014614461e = $('<div id="html_0fd467019c2447a3992c24014614461e" style="width: 100.0%; height: 100.0%;"> Evergreen 4.2 SSE</div>')[0];
+                popup_a662892bd81c43ea9cd3b48d7593eb35.setContent(html_0fd467019c2447a3992c24014614461e);
+            
+
+            marker_b49c625b20ce4cd7be085554253603eb.bindPopup(popup_a662892bd81c43ea9cd3b48d7593eb35)
+            ;
+
+            
+        
     
-            var circle_marker_b7ec5e5107944cdb9429e296c71972a3 = L.circleMarker(
-                [40.172889, -105.015225],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_f237a05677af42cf87c00bf01667ca3a = L.marker(
+            [40.21242, -105.04257379999999],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_063c618d39ce46718ac512295d0190a4 = L.circleMarker(
-                [39.77385, -105.38644],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_5d6e24b519ee48eeaf6e14f0afb243c6 = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_da8b2047ddf44aed87d0d554269d9c50 = $('<div id="html_da8b2047ddf44aed87d0d554269d9c50" style="width: 100.0%; height: 100.0%;"> Longmont 4.6 NE</div>')[0];
+                popup_5d6e24b519ee48eeaf6e14f0afb243c6.setContent(html_da8b2047ddf44aed87d0d554269d9c50);
+            
+
+            marker_f237a05677af42cf87c00bf01667ca3a.bindPopup(popup_5d6e24b519ee48eeaf6e14f0afb243c6)
+            ;
+
+            
+        
     
-            var circle_marker_40d7287a2dd24b969b84b3306443ca9e = L.circleMarker(
-                [39.580999999999996, -105.0762],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_c695838d22d5473c89535bde0f8dd9f0 = L.marker(
+            [39.817103, -105.177416],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_4261c5fb7ba44508b2f4499b7123868e = L.circleMarker(
-                [39.7197303771973, -105.24716186523399],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_b0242ee6369048119f1efed96756a54e = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_f7d4abb651e34657a836f7791eec07bd = $('<div id="html_f7d4abb651e34657a836f7791eec07bd" style="width: 100.0%; height: 100.0%;"> Arvada 3.8 W</div>')[0];
+                popup_b0242ee6369048119f1efed96756a54e.setContent(html_f7d4abb651e34657a836f7791eec07bd);
+            
+
+            marker_c695838d22d5473c89535bde0f8dd9f0.bindPopup(popup_b0242ee6369048119f1efed96756a54e)
+            ;
+
+            
+        
     
-            var circle_marker_5865f8abc460402fbf7a0976067121ef = L.circleMarker(
-                [39.52188611, -104.99176740000001],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_6928a40bc10e422b9e4b9b1910d3aa69 = L.marker(
+            [39.984390000000005, -104.81341],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_7ae52e030db143a09e86a5baa11a4368 = L.circleMarker(
-                [39.5561, -105.3114],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_d42069a90ebc487dab243faff3432a69 = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_12ddc6b8046a43c397fd421bdcd84bc5 = $('<div id="html_12ddc6b8046a43c397fd421bdcd84bc5" style="width: 100.0%; height: 100.0%;"> Brighton 2.1 NNW</div>')[0];
+                popup_d42069a90ebc487dab243faff3432a69.setContent(html_12ddc6b8046a43c397fd421bdcd84bc5);
+            
+
+            marker_6928a40bc10e422b9e4b9b1910d3aa69.bindPopup(popup_d42069a90ebc487dab243faff3432a69)
+            ;
+
+            
+        
     
-            var circle_marker_32086939395d4f6cabdb659018d3056c = L.circleMarker(
-                [40.4068880528212, -105.406297445297],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
-            
+        var marker_9a7b9de04f9043ae822ef6f3a1ee95cd = L.marker(
+            [39.9752, -104.7909],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
     
-            var circle_marker_63d0788d6d6c4075b004252488a53761 = L.circleMarker(
-                [39.5561, -105.3114],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+            var popup_0553111dd6b54c928357964ae741115f = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_2e6770c297f64e408eb2f35ba82c32f3 = $('<div id="html_2e6770c297f64e408eb2f35ba82c32f3" style="width: 100.0%; height: 100.0%;"> Brighton 1.7 ESE</div>')[0];
+                popup_0553111dd6b54c928357964ae741115f.setContent(html_2e6770c297f64e408eb2f35ba82c32f3);
+            
+
+            marker_9a7b9de04f9043ae822ef6f3a1ee95cd.bindPopup(popup_0553111dd6b54c928357964ae741115f)
+            ;
+
+            
+        
     
-            var circle_marker_43bcc4822da543118adcb7d0e712f822 = L.circleMarker(
-                [40.2843, -105.1608],
-                {
-  "bubblingMouseEvents": true,
-  "color": "#3388ff",
-  "dashArray": null,
-  "dashOffset": null,
-  "fill": true,
-  "fillColor": "red",
-  "fillOpacity": 0.2,
-  "fillRule": "evenodd",
-  "lineCap": "round",
-  "lineJoin": "round",
-  "opacity": 1.0,
-  "radius": 10,
-  "stroke": true,
-  "weight": 3
-}
-                )
-                .addTo(map_2935d91159184db4b7b295fa16bfee39);
+        var marker_6a5629cb50d0405cb89e07416ed75100 = L.marker(
+            [39.676156, -105.03612690000001],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_adde6269daaa4256abcd77997397d11c = L.popup({maxWidth: '300'
             
+            });
+
+            
+                var html_c9aaa59c53964f8b889477209abb366d = $('<div id="html_c9aaa59c53964f8b889477209abb366d" style="width: 100.0%; height: 100.0%;"> Denver 5.3 SW</div>')[0];
+                popup_adde6269daaa4256abcd77997397d11c.setContent(html_c9aaa59c53964f8b889477209abb366d);
+            
+
+            marker_6a5629cb50d0405cb89e07416ed75100.bindPopup(popup_adde6269daaa4256abcd77997397d11c)
+            ;
+
+            
+        
+    
+        var marker_d216053e958c406a9dd004a1f44f0a12 = L.marker(
+            [40.172889, -105.015225],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_33baabbbf3f74d269f329a335082913b = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_c7afd3d87b99496ba6f308d60c272d86 = $('<div id="html_c7afd3d87b99496ba6f308d60c272d86" style="width: 100.0%; height: 100.0%;"> Longmont 5.1 E</div>')[0];
+                popup_33baabbbf3f74d269f329a335082913b.setContent(html_c7afd3d87b99496ba6f308d60c272d86);
+            
+
+            marker_d216053e958c406a9dd004a1f44f0a12.bindPopup(popup_33baabbbf3f74d269f329a335082913b)
+            ;
+
+            
+        
+    
+        var marker_30ac50d46f194239845dd04ec85c065e = L.marker(
+            [39.77385, -105.38644],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_3e25ce79e61447b29a636e2315d6c951 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_2094fb2e14634f55a18a02b82610b1da = $('<div id="html_2094fb2e14634f55a18a02b82610b1da" style="width: 100.0%; height: 100.0%;"> Golden 9.4 WNW</div>')[0];
+                popup_3e25ce79e61447b29a636e2315d6c951.setContent(html_2094fb2e14634f55a18a02b82610b1da);
+            
+
+            marker_30ac50d46f194239845dd04ec85c065e.bindPopup(popup_3e25ce79e61447b29a636e2315d6c951)
+            ;
+
+            
+        
+    
+        var marker_ec6ac1ad6b5f4869a4e94de650cfe0cd = L.marker(
+            [39.580999999999996, -105.0762],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_437efe83df724b15854c086efe8c9720 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_6edad5db025241e580c7d13ebde464ea = $('<div id="html_6edad5db025241e580c7d13ebde464ea" style="width: 100.0%; height: 100.0%;"> Chatfield Dam 2 NW</div>')[0];
+                popup_437efe83df724b15854c086efe8c9720.setContent(html_6edad5db025241e580c7d13ebde464ea);
+            
+
+            marker_ec6ac1ad6b5f4869a4e94de650cfe0cd.bindPopup(popup_437efe83df724b15854c086efe8c9720)
+            ;
+
+            
+        
+    
+        var marker_08340dce635140d7adac422f60635ce0 = L.marker(
+            [39.7197303771973, -105.24716186523399],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_7b0bd42e436b4763a02c4c478f5c4e27 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_d609f994fe4147cbad9012d083d1e608 = $('<div id="html_d609f994fe4147cbad9012d083d1e608" style="width: 100.0%; height: 100.0%;"> Golden 2.1 SW</div>')[0];
+                popup_7b0bd42e436b4763a02c4c478f5c4e27.setContent(html_d609f994fe4147cbad9012d083d1e608);
+            
+
+            marker_08340dce635140d7adac422f60635ce0.bindPopup(popup_7b0bd42e436b4763a02c4c478f5c4e27)
+            ;
+
+            
+        
+    
+        var marker_1e69ae268a72477a8ea6d3f57d118828 = L.marker(
+            [39.52188611, -104.99176740000001],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_cbcebf4f56c64b20a8ea84a1c1848b62 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_5d53cbcbb48e47e3a13b6d5b5ca26ce7 = $('<div id="html_5d53cbcbb48e47e3a13b6d5b5ca26ce7" style="width: 100.0%; height: 100.0%;"> Highlands Ranch 2.5 SSW</div>')[0];
+                popup_cbcebf4f56c64b20a8ea84a1c1848b62.setContent(html_5d53cbcbb48e47e3a13b6d5b5ca26ce7);
+            
+
+            marker_1e69ae268a72477a8ea6d3f57d118828.bindPopup(popup_cbcebf4f56c64b20a8ea84a1c1848b62)
+            ;
+
+            
+        
+    
+        var marker_0640eea620f045dd813a6f817553b55f = L.marker(
+            [39.5561, -105.3114],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_3a12f6e53b484a2e971d99481bd36350 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_bf6d71b9da0b4007877de55bc0ffd869 = $('<div id="html_bf6d71b9da0b4007877de55bc0ffd869" style="width: 100.0%; height: 100.0%;"> Evergreen 5.3 S</div>')[0];
+                popup_3a12f6e53b484a2e971d99481bd36350.setContent(html_bf6d71b9da0b4007877de55bc0ffd869);
+            
+
+            marker_0640eea620f045dd813a6f817553b55f.bindPopup(popup_3a12f6e53b484a2e971d99481bd36350)
+            ;
+
+            
+        
+    
+        var marker_1666089592e6496cb78f3fc5eb58fd32 = L.marker(
+            [40.4068880528212, -105.406297445297],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_59c4466766f34b5a87eb4f224fe8f36a = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_73bd0e8014344ca2b732bdabe02e1bcb = $('<div id="html_73bd0e8014344ca2b732bdabe02e1bcb" style="width: 100.0%; height: 100.0%;"> Drake 4.3 WSW</div>')[0];
+                popup_59c4466766f34b5a87eb4f224fe8f36a.setContent(html_73bd0e8014344ca2b732bdabe02e1bcb);
+            
+
+            marker_1666089592e6496cb78f3fc5eb58fd32.bindPopup(popup_59c4466766f34b5a87eb4f224fe8f36a)
+            ;
+
+            
+        
+    
+        var marker_de29aca968ce4d97b46e1e0c8c4c01d5 = L.marker(
+            [39.5561, -105.3114],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_dbffba3f4e534dd8ba0218696f5adec2 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b9f53150f68d40e7acf46d1c4a1aca41 = $('<div id="html_b9f53150f68d40e7acf46d1c4a1aca41" style="width: 100.0%; height: 100.0%;"> Evergreen 5.3 S</div>')[0];
+                popup_dbffba3f4e534dd8ba0218696f5adec2.setContent(html_b9f53150f68d40e7acf46d1c4a1aca41);
+            
+
+            marker_de29aca968ce4d97b46e1e0c8c4c01d5.bindPopup(popup_dbffba3f4e534dd8ba0218696f5adec2)
+            ;
+
+            
+        
+    
+        var marker_063ebaac687f43778c53fccb1ab4e02d = L.marker(
+            [40.2843, -105.1608],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+            var popup_d5b3d4f0aa3140809d6315c4d949e049 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_01efd187981e4b54b5ab43c01d9d703d = $('<div id="html_01efd187981e4b54b5ab43c01d9d703d" style="width: 100.0%; height: 100.0%;"> Berthoud 4.4 WSW</div>')[0];
+                popup_d5b3d4f0aa3140809d6315c4d949e049.setContent(html_01efd187981e4b54b5ab43c01d9d703d);
+            
+
+            marker_063ebaac687f43778c53fccb1ab4e02d.bindPopup(popup_d5b3d4f0aa3140809d6315c4d949e049)
+            ;
+
+            
+        
+    
+        var marker_ee38babf4fcd4b909d9fce5fab122244 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_531868adaf73423bb36227342c7d75cf = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_316106415add4b049c06786fd8d3d487 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_e8b3da9596124e8c99f20b453d04d4c3 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_5e9d18288b494397b6df24e8823ec656 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_e8e10d2eaa494605801050f67131c33d = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_c52da6be4aea4e17a745906ed85b8bd2 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_d8852b7246c541bd81b3608b746e7ff7 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_14e77de0557341b6bf72d160c2ed8a0c = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_cc170935254e4b898b80fd6e246c83ec = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_402ebc6eb2da464fb4ea8067701916f6 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_2fc718f08d27462f844ab3f3b87b9f9b = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_c31a179733824ad3aab2508c6ac079f9 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_3724db2351a44df6bcf03f48a8c369af = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_248be68b6ddb43a7bf43642b5ab0369b = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_da2370a99de34c16b95dd6bf04601a05 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_e3dbf6ca3cd7475298950193bf7d3ecb = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_6b3f5f024ec746c786f58314b2a77957 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
+    
+        var marker_f5307b1b7e964840b99a6e568ab7ddf8 = L.marker(
+            [40.0, -105.0],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(map_e07596a4356f445f8eb0f8a7aa6c93e2);
+        
 </script>

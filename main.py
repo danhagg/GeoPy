@@ -141,15 +141,22 @@ def query(long, lat, dateString, states):
         return
     else:
         df['TargetLatitude'] = lat
+        df['TargetLatitude'] = df['TargetLatitude'].astype('float')
         df['TargetLongitude'] = long
+        df['TargetLongitude'] = df['TargetLongitude'].astype('float')
         df['Distance'] = df[['Latitude', 'Longitude','TargetLatitude','TargetLongitude']].apply(lambda x: distance(*x), axis=1)
         final = df
 
-        colors = {'A' : 'red', 'B' : 'blue'}
 
-        map_osm = folium.Map(location=[40.742, -73.956], zoom_start=11)
+        map_osm = folium.Map(location=[float(lat), float(long)], tiles="Stamen Toner", zoom_start=8)
 
-        df.apply(lambda row:folium.CircleMarker(location=[row["Latitude"], row["Longitude"]],
+        locations = df[['Latitude', 'Longitude']]
+        locationlist = locations.values.tolist()
+        for point in range(0, len(locationlist)):
+            folium.Marker(locationlist[point], popup=df['StationName'][point]).add_to(map_osm)
+
+            # reduce this to one marker
+        df.apply(lambda row:folium.CircleMarker(location=[row["TargetLatitude"], row["TargetLongitude"]],
                                                       radius=10, fill_color='red')
                                                      .add_to(map_osm), axis=1)
 
